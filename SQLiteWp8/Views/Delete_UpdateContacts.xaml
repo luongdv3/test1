@@ -1,0 +1,79 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    x:Class="SQLiteWp8.Views.Delete_UpdateContacts"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d"
+    shell:SystemTray.IsVisible="True">
+
+	<Grid x:Name="LayoutRoot" Background="LightSeaGreen">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+
+		<!--TitlePanel contains the name of the application and page title-->
+		<StackPanel Grid.Row="0" Margin="12,17,0,28">
+			<TextBlock Text="CHI TIẾT DANH BẠ" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}" FontSize="32" TextAlignment="Center" FontWeight="Bold" Foreground="#FF0C00FF" FontFamily="Tahoma"/>
+		</StackPanel>
+
+		<Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+			
+			<Grid.RowDefinitions>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+
+			<StackPanel Grid.Row="0" Orientation="Horizontal">
+				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Họ và tên:" VerticalAlignment="Center" FontSize="24" Foreground="#FF020000" FontWeight="Bold"/>
+				<toolkit:PhoneTextBox BorderBrush="LightBlue" HorizontalAlignment="Left" x:Name="NametxtBx" TextWrapping="Wrap" FontSize="25" Margin="0,0,0,0" Hint="Họ và tên" Width="336"/>
+			</StackPanel>
+
+			<StackPanel Grid.Row="1" Orientation="Horizontal">
+				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Số ĐT:" VerticalAlignment="Center" FontSize="24" Foreground="#FF020000" FontWeight="Bold"/>
+				<toolkit:PhoneTextBox BorderBrush="LightBlue" HorizontalAlignment="Left" x:Name="PhonetxtBx" TextWrapping="Wrap" FontSize="25" Margin="40,0,0,0" Hint="Số điện thoại" InputScope="Number" Width="334"/>
+			</StackPanel>
+
+			<StackPanel Grid.Row="2" Orientation="Horizontal">
+				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Email:" VerticalAlignment="Center" FontSize="24" Foreground="#FF020000" FontWeight="Bold"/>
+				<toolkit:PhoneTextBox BorderBrush="LightBlue" x:Name="EmailtxtBx" TextWrapping="Wrap" FontSize="25" Margin="45,0,0,0" Hint="Địa chỉ Email" InputScope="EmailSmtpAddress" Width="336"/>
+				
+			</StackPanel>
+
+			<StackPanel Grid.Row="3" Orientation="Horizontal">
+				<TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Giới tính:" VerticalAlignment="Center" FontSize="24" Foreground="#FF020000" FontWeight="Bold"/>
+				<RadioButton x:Name="GenderMaleRd" Content="Nam" IsChecked="True" Margin="41,0,0,0" Foreground="Black" FontWeight="Bold"/>
+				<RadioButton x:Name="GenderFemaleRd" Content="Nữ" Margin="60,0,0,0" Foreground="Black" FontWeight="Bold"/>
+			</StackPanel>
+
+			<StackPanel Grid.Row="4" Orientation="Horizontal">
+				<TextBlock HorizontalAlignment="Left" Margin="6,0,0,0" TextWrapping="Wrap" Text="Địa chỉ:" VerticalAlignment="Center" FontSize="24" Foreground="#FF020000" FontWeight="Bold"/>
+				<toolkit:PhoneTextBox BorderBrush="LightBlue" x:Name="AddresstxtBx" TextWrapping="Wrap" FontSize="25" Margin="20,0,0,0" Hint="Địa chỉ" Width="340"/>
+			
+			</StackPanel>
+
+			<StackPanel Grid.Row="5"  Margin="0,0,10,0">
+				
+				<Button Content="Xóa" Height="80" Click="DeleteContact_Click" Background="#FF041BFF" FontSize="26.667" FontWeight="Bold"/>
+				<Button Content="Cập nhật" Height="80" Click="UpdateContact_Click" Background="#FF0404FF" FontSize="26.667" FontWeight="Bold"/>
+				
+			</StackPanel>
+			
+		</Grid>
+	</Grid>
+
+    
+
+</phone:PhoneApplicationPage>
